@@ -6,6 +6,8 @@ FROM policy p
 RIGHT JOIN installment i ON i.policy_id = p.id
 GROUP BY p.id
 HAVING COUNT(i.id) > 1;
+
+
   B.Rozwiązanie dla optymalizacji zapytania:
   SELECT
     p.id AS policy_id, i.id AS installment_id, p.number, i.premium
