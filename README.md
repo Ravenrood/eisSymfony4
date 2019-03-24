@@ -1,9 +1,11 @@
 # eisSymfony4
 Rozwiązania dla postgres znajdują się w pliku **rozwiazanie-postgresql.txt**
 
-aplikacja symfony4:
-output dla json
+##aplikacja symfony4:
+###output dla json
 ###### php bin/console random-user
-output dla tabeli
+###output dla tabeli
 ###### php bin/console random-user -f
+###wynik html w głównym routingu:
+###### /
 

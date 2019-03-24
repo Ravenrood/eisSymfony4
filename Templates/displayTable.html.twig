@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    {% block head %}
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery.dataTables.min.css') }}">
+        {% endblock %}
+        <title>{% block title %}{{ title }}{% endblock %}</title>
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+
+            <script type="text/javascript" language="javascript">
+                $(document).ready(function () {
+                    $('#myTable').DataTable();
+                });
+            </script>
+        {% endblock %}
+    {% endblock %}
+</head>
+<body>
+
+    {% block body %}
+
+        <table id="myTable" class="display">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% if data is defined %}
+                {% for items in data %}
+                    <tr>
+                        <th>{{ items.FirstName }}</th>
+                        <th>{{ items.LastName }}</th>
+                        <th>{{ items.Address }}</th>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
+
+    {% endblock %}
+</body>
+</html>
